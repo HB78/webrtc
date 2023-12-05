@@ -1,0 +1,76 @@
+*, ::before, ::after {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+#videos {
+    display: grid;
+    height: 100vh;
+    grid-template-columns: 1fr;
+    overflow: hidden;
+}
+
+.video-player {
+    width: 100%;
+    height: 100%;
+    background-color: #162129;
+    object-fit: cover;
+}
+
+#user-2 {
+    display: none;
+}
+
+/* le petit cadre video dans la video grand écran */
+.smallFrame {
+    position:fixed;
+    top: 20px;
+    left: 20px;
+    width: 300px;
+    height: 170px;
+    border-radius: 5px;
+    border: 2px solid #b366f9;
+    box-shadow: 3px 3px 15px -1px rgba(0,0,0,0.77);
+    z-index: 999;
+}
+
+/* camera controllers */
+.controls {
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 1em;
+}
+.controls_container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(179, 102, 249, 0.9);
+    padding: 20px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.controls_container img {
+    height: 30px;
+    width: 30px;
+}
+
+#leave-btn {
+    color: white;
+    background-color: rgb(255, 80, 80, 1);
+}
+
+@media screen and (max-width:600px){
+    .smallFrame{
+        height: 80px;
+        width: 120px;
+    }
+    .controls_container img {
+        width: 20px;
+        height: 20px;
+    }
+}
